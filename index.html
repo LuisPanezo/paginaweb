@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para La señora Laly❤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo atmosférico -->
+  <div class="bg-glow"></div>
+  <div class="bg-grain"></div>
+
+  <!-- Canvas de pétalos cayendo -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Tarjeta principal -->
+  <main class="card">
+
+    <!-- LADO IZQUIERDO: MENSAJE -->
+    <section class="message">
+      <div class="message-decor">❀</div>
+
+      <h1 class="title">
+        <span class="title-line">Para Laly</span>
+        <span class="heart-icon">❤</span>
+      </h1>
+
+      <div class="text-content">
+        <p data-reveal>Por que me contestas solo cuando vas a responder los grupos.</p>
+        <p data-reveal>¿Me daras un hijastro?.</p>
+        <p data-reveal>Llama al doctor y averíguate. La quiero, señora Laly; me falta darle las rosas presencialmente. 🌹</p>
+      </div>
+
+      <div class="signature">
+        <span class="signature-line"></span>
+        <span class="signature-text">Para la señora Laly</span>
+        <span class="signature-line"></span>
+      </div>
+    </section>
+
+    <!-- LADO DERECHO: ROSA REALISTA -->
+    <section class="rose-stage">
+
+      <!-- Resplandor detrás de la rosa -->
+      <div class="rose-glow"></div>
+
+      <div class="rose">
+        <!-- Tallo y hojas -->
+        <div class="stem"></div>
+        <div class="leaf leaf-left"><div class="leaf-vein"></div></div>
+        <div class="leaf leaf-right"><div class="leaf-vein"></div></div>
+
+        <!-- Sépalos verdes (la base de la flor) -->
+        <div class="sepal sepal-1"></div>
+        <div class="sepal sepal-2"></div>
+        <div class="sepal sepal-3"></div>
+
+        <!-- LA ROSA: pétalos SVG -->
+        <div class="flower">
+          <svg class="rose-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="petalOuter" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#ff4d6d"/>
+                <stop offset="60%" stop-color="#c41e3a"/>
+                <stop offset="100%" stop-color="#7a0d1c"/>
+              </radialGradient>
+
+              <radialGradient id="petalMid" cx="50%" cy="35%" r="55%">
+                <stop offset="0%" stop-color="#ff6b7a"/>
+                <stop offset="55%" stop-color="#c41e3a"/>
+                <stop offset="100%" stop-color="#5a0010"/>
+              </radialGradient>
+
+              <radialGradient id="petalInner" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" stop-color="#e63946"/>
+                <stop offset="60%" stop-color="#8b0a1f"/>
+                <stop offset="100%" stop-color="#3a0510"/>
+              </radialGradient>
+
+              <radialGradient id="petalCore" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#5a0010"/>
+                <stop offset="100%" stop-color="#1a0005"/>
+              </radialGradient>
+
+              <filter id="petalShadow">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                <feOffset dx="1" dy="2"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Capa 1: pétalos exteriores abiertos -->
+            <g class="petal-layer layer-outer" filter="url(#petalShadow)">
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(0 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(45 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(90 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(135 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(180 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(225 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(270 150 150)"/>
+              <path d="M150,150 Q90,80 60,120 Q40,160 80,200 Q120,220 150,150 Z" fill="url(#petalOuter)" transform="rotate(315 150 150)"/>
+            </g>
+
+            <!-- Capa 2: pétalos medios -->
+            <g class="petal-layer layer-mid">
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(22 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(67 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(112 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(157 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(202 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(247 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(292 150 150)"/>
+              <path d="M150,150 Q110,100 95,130 Q85,160 110,185 Q135,195 150,150 Z" fill="url(#petalMid)" transform="rotate(337 150 150)"/>
+            </g>
+
+            <!-- Capa 3: pétalos internos -->
+            <g class="petal-layer layer-inner">
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(0 150 150)"/>
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(60 150 150)"/>
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(120 150 150)"/>
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(180 150 150)"/>
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(240 150 150)"/>
+              <path d="M150,150 Q125,115 115,135 Q108,158 125,175 Q142,182 150,150 Z" fill="url(#petalInner)" transform="rotate(300 150 150)"/>
+            </g>
+
+            <!-- Capa 4: pétalos cerrados -->
+            <g class="petal-layer layer-tight">
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(30 150 150)"/>
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(90 150 150)"/>
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(150 150 150)"/>
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(210 150 150)"/>
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(270 150 150)"/>
+              <path d="M150,150 Q138,128 132,142 Q128,158 140,168 Q150,170 150,150 Z" fill="url(#petalInner)" transform="rotate(330 150 150)"/>
+            </g>
+
+            <!-- Capullo central -->
+            <g class="rose-bud">
+              <ellipse cx="150" cy="150" rx="14" ry="18" fill="url(#petalCore)"/>
+              <path d="M150,135 Q142,148 148,162 Q156,150 150,135 Z" fill="#3a0510" opacity="0.8"/>
+              <path d="M150,135 Q158,148 152,162 Q144,150 150,135 Z" fill="#5a0010" opacity="0.6"/>
+              <ellipse cx="148" cy="146" rx="2" ry="3" fill="rgba(255,150,160,0.4)"/>
+            </g>
+
+            <!-- Brillo sutil -->
+            <ellipse cx="135" cy="125" rx="25" ry="15" fill="rgba(255,255,255,0.15)" transform="rotate(-30 135 125)"/>
+          </svg>
+        </div>
+
+        <!-- Brillos decorativos -->
+        <div class="sparkle sp1">✦</div>
+        <div class="sparkle sp2">✧</div>
+        <div class="sparkle sp3">✦</div>
+        <div class="sparkle sp4">✧</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
